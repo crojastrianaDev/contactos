@@ -1,5 +1,5 @@
 # contactos
-Este repositorio contiene el código necesario para un CRUD del modelo contactos, cuyos datos pueden ser alamacenados en firebase.
+Este repositorio contiene el código necesario para un CRUD de uan clase modelo contactos, cuyos datos pueden ser almacenados en firebase.
 
 # Genere node_modules
 npm install
