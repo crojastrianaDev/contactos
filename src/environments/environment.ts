@@ -5,13 +5,7 @@
 export const environment = {
   production: false,
   firebaseConfig: {
-    apiKey: 'AIzaSyDGe6EP7-GFNoJPzbHy9liNgxBRouZe_G0',
-    authDomain: 'contactos-d034a.firebaseapp.com',
-    projectId: 'contactos-d034a',
-    storageBucket: 'contactos-d034a.appspot.com',
-    messagingSenderId: '780988772122',
-    appId: '1:780988772122:web:17c462680742873a8886a3',
-    measurementId: 'G-XG22T649MJ',
+    //Key de Firebase.
   },
 };
 
