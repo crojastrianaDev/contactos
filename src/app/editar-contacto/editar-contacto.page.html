@@ -3,15 +3,15 @@
     <ion-button (click)="regresar()" color="danger" slot="start">
       <ion-icon name="return-down-back-outline"></ion-icon>
     </ion-button>
-    <ion-title>Nuevo Contacto</ion-title>
+    <ion-title>Editar Contacto</ion-title>
     <ion-button routerLink="/tabs/tab1" color="danger" slot="end">
       <ion-icon name="close-circle-outline"></ion-icon>
     </ion-button>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <form novalidate [formGroup]="nuevoForm">
+<ion-content *ngIf="seleccionado">
+  <form novalidate [formGroup]="updateForm">
     <ion-list>
       <ion-item>
         <ion-label position="floating">Nombre</ion-label>
@@ -69,10 +69,14 @@
         expand="block"
         type="submit"
         color="primary"
-        (click)="guardar()"
+        (click)="editar()"
       >
-        <ion-icon name="person-add-outline" size="large" slot="end"></ion-icon>
-        Guardar
+        <ion-icon
+          name="cloud-upload-outline"
+          size="large"
+          slot="end"
+        ></ion-icon>
+        Editar
       </ion-button>
     </div>
   </form>

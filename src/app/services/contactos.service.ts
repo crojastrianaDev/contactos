@@ -42,10 +42,34 @@ export class ContactosService {
       .doc(`contactos/${contacto}`)
       .delete()
       .then(() => {
-        console.log('COntactoo eliminado');
+        console.log('Contacto eliminado');
       })
       .catch((err) => {
         console.log(err);
       });
+  }
+  getContacto(id: string): Observable<Contacto> {
+    return this.contactosCollection
+      .doc<Contacto>(id)
+      .valueChanges()
+      .pipe(
+        take(1),
+        map((contacto) => {
+          contacto.id = id;
+          return contacto;
+        })
+      );
+  }
+  editarContacto(contacto: Contacto): Promise<void> {
+    console.log(contacto.id);
+    console.log('ol');
+
+    return this.contactosCollection.doc(contacto.id).update({
+      nombre: contacto.nombre,
+      apellidos: contacto.apellidos,
+      telefono: contacto.telefono,
+      empresa: contacto.empresa,
+      correo: contacto.correo,
+    });
   }
 }

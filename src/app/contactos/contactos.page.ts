@@ -46,7 +46,7 @@ export class ContactosPage implements OnInit {
         {
           text: 'Editar contacto',
           handler: () => {
-            alert(contacto);
+            this.editar(contacto);
           },
         },
         {
@@ -91,5 +91,8 @@ export class ContactosPage implements OnInit {
         duration: 2000,
       })
       .then((toast) => toast.present());
+  }
+  async editar(contacto: Contacto) {
+    this.router.navigate(['tabs/editarContacto', contacto]);
   }
 }
